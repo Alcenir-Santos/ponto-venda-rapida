@@ -13,6 +13,8 @@
     width: 230px;
     height: 230px;
     color: aqua;
+    margin-top: -50px;
+    margin-left: -50px;
 }
 .rightTop{
     float: right;
