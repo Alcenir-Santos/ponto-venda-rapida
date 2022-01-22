@@ -13,5 +13,16 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      window.addEventListener(
+        "resize",
+        function () {
+          if (window.outerWidth < 700) {
+            window.resizeTo(700, window.outerHeight);
+          }
+        },
+        true
+      );
+    </script>
   </body>
 </html>

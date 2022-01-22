@@ -1,0 +1,58 @@
+.helpButton{
+    width: 168px;
+    height: 40px;
+    border-radius: 12px;
+    margin: 0;
+    border: double 1.5px transparent;
+    background-image: linear-gradient(#363D4D, #363D4D), 
+                      linear-gradient(to right, #69E5FF, #E22BDA);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+.textButtonHelp{
+    background-image: linear-gradient(to right, #69E5FF, #E22BDA);
+    background-size: 100%;
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.colorButton{
+    color: -webkit-linear-gradient(to right, #69E5FF, #E22BDA);
+    width: 168px;
+    height: 40px;
+    border-width: 1px;
+    background-color: transparent;
+    border: 0;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 1040px) {
+    .colorButton{
+        font-size: 14px;
+        width: 130px;
+    }
+    .helpButton{
+        width: 130px;
+    }
+}
+@media screen and (max-width: 830px) {
+    .colorButton{
+        font-size: 12px;
+        width: 100px;
+    }
+    .helpButton{
+        width: 100px;
+    }
+}
+@media screen and (max-width: 720px) {
+    .colorButton{
+        font-size: 10px;
+        width: 90px;
+    }
+    .helpButton{
+        width: 90px;
+    }
+}

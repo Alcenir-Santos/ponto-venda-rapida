@@ -1,0 +1,14 @@
+.status {
+    width: 170px;
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+.textStatus{
+    margin: 0 6px 0 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+}

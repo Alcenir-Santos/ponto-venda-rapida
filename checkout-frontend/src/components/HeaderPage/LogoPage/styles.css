@@ -1,0 +1,23 @@
+.headerPage{
+    width: 100%;
+    display: flex;
+}
+
+.title{
+    display: inline;
+    width: min-content;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFFFFF;
+}
+.subTitle{
+    display: inline;
+    margin-top: 25px;
+    width: min-content;
+    float: right;
+    font-size: 36px;
+    font-weight: normal;
+    color: #69E5FF;
+}
