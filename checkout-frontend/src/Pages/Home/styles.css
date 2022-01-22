@@ -1,0 +1,39 @@
+.home {
+    background-color: #363D4D;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    padding: 0;
+    position: relative;
+}
+.leftTop{
+    background: #B370B0;
+    filter: blur(125px);
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    color: aqua;
+}
+.rightTop{
+    float: right;
+    background: #69E5FF;
+    filter: blur(100px);
+    width: 250px;
+    height: 250px;
+}
+.right{
+    float: right;
+    background: #D220CA;
+    margin-top: 200px;
+    margin-right: -250px;
+    filter: blur(100px);
+    width: 200px;
+    height: 200px;
+}
+.container-center{
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    height: 70vh;
+    width: 70vw;
+}
