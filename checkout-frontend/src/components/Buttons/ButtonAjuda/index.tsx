@@ -1,15 +1,15 @@
 import './styles.css';
 
 type Props = {
-    onSubmit: Function;
+    onChange: Function;
     text: string;
     color: string;
 }
 
-const ButtonAjuda = ({ onSubmit, text, color }: Props) => {
+const ButtonAjuda = ({ onChange, text, color }: Props) => {
     return (
         <p className="helpButton">
-            <button className={`${color}`} onClick={() => onSubmit}><span className='textButtonHelp'>{text}</span></button>
+            <button type='button' className={`${color}`} onClick={()=>onChange()}><span className='textButtonHelp'>{text}</span></button>
         </p>
     );
 }
