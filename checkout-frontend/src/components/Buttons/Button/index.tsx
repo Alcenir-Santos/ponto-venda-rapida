@@ -10,13 +10,12 @@ type Props = {
 
 const Button = ({ onSubmit, text, color,disabled }: Props) => {
     const[enabled, setEnabled] = useState(true)
-    console.log('Button',disabled);
     useEffect(()=>{
         setEnabled(disabled);
     },[disabled]);
     return (
         <>
-            <button className={`${color}`} onClick={() => onSubmit} disabled={enabled}>{text}</button>
+            <button type='button' className={`${color}`} onClick={() => onSubmit()} disabled={enabled}>{text}</button>
         </>
     );
 }

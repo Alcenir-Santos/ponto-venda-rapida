@@ -1,15 +1,13 @@
 import './styles.css';
 import { ReactComponent as IconReturn } from 'assets/img/seta.svg';
 type Props = {
-    enabled?: string;
     onChange: Function;
 }
 
-const Help = ({ enabled = 'disabled', onChange }: Props) => {
+const Help = ({ onChange }: Props) => {
 
     return (
         <>
-            <div className={`${enabled}`}>
                 <div className={`menuHelp`}>
                     <div className="titleHelp">
                         <span>FOX<span>Shop</span></span>
@@ -53,7 +51,6 @@ const Help = ({ enabled = 'disabled', onChange }: Props) => {
                         </button>
                     </div>
                 </div>
-            </div>
         </>
     );
 }

@@ -1,15 +1,34 @@
 import './styles.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 const Login = () => {
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!loading && localStorage.getItem("token") !== null) {
+            navigate("/home");
+        }
+    }, [loading, navigate]);
+    const login = () => {
+        setLoading(true);
+        setTimeout(() => {
+            localStorage.setItem("token", "token");
+            setLoading(false);
+        }, 2000);
+    };
     return (
         <>
             <div className='fundo'>
-                <div className='logo col-5'>
-                    <Link to='/home'>logar</Link>
-                </div>
                 <div className='campos col-5'>
-                    <Link to='/home'>logar</Link>
+                    <label>Usuário</label>
+                    <input />
+                    <label>Senha</label>
+                    <input type="password" />
+                    <div className="enter">
+                        {loading && <div className="loader"></div>}
+                        <button onClick={login}>Entrar</button>
+                    </div>
                 </div>
             </div>
         </>

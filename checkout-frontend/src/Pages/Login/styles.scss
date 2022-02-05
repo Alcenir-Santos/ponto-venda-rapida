@@ -16,11 +16,14 @@
     background-color: aquamarine;
     background-repeat: no-repeat;
     height: 70vh;
+    width: 40%;
 }
 .campos{
     display: flex;
+    width: 40%;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 70vh;
     background-color: bisque;
 }

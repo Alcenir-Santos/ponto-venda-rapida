@@ -1,0 +1,229 @@
+.modal {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    width: 90%;
+    height: 90%;
+    border-radius: 12px;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .infoCliente {
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+      width: 50%;
+      height: 100%;
+      background-color: #363d4d;
+    }
+    .etapacliente {
+      display: flex;
+      justify-content: baseline;
+      align-items: center;
+      flex-direction: column;
+      height: 50%;
+      .etapa {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        button {
+          background-color: transparent;
+          border: none;
+          width: 40px;
+          height: 40px;
+          font-size: 30px;
+          color: #ffe2fe;
+          margin-top: 10px;
+        }
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          font-size: 30px;
+          color: #363d4d;
+          border-radius: 50%;
+          background-color: #ffe2fe;
+          margin-top: 8px;
+        }
+        span {
+          margin-left: 25px;
+          margin-top: 12px;
+          font-size: 30px;
+          color: #ffe2fe;
+        }
+      }
+      .dadosCliente {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        div {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+        .inputLabel {
+          display: flex;
+          flex-direction: column;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 16px;
+          color: #69e5ff;
+
+          label {
+            font-size: 15px;
+            margin-left: 15px;
+            margin-bottom: 5px;
+          }
+          input {
+            height: 40px;
+            background: #ffffff;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 20px;
+          }
+        }
+        .cod {
+          width: 20%;
+        }
+        .cli {
+          width: 80%;
+        }
+        .end {
+          width: 96%;
+        }
+      }
+    }
+    .etapaFormaPagamento {
+      display: flex;
+      justify-content: baseline;
+      align-items: center;
+      flex-direction: column;
+      height: 50%;
+      .etapa {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 60px;
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          font-size: 30px;
+          color: #363d4d;
+          border-radius: 50%;
+          background-color: #ffe2fe;
+          margin-top: 8px;
+        }
+        span {
+          margin-left: 25px;
+          margin-top: 12px;
+          font-size: 30px;
+          color: #ffe2fe;
+        }
+      }
+      .formaPagamento {
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 16px;
+        color: #69e5ff;
+        label {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          user-select: none;
+          input {
+            opacity: 0;
+          }
+        }
+        .checkmark {
+          height: 20px;
+          width: 20px;
+          background-color: #eee;
+          border-radius: 50%;
+        }
+        label:hover input ~ .checkmark {
+          background-color: #ccc;
+        }
+        label input:checked ~ .checkmark {
+          background-color: #2196f3;
+        }
+        @media screen and (max-width: 600px) {
+          flex-direction: column;
+        }
+      }
+    }
+    .infoPagamento {
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+      background-color: #fbf2fa;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .headerPayment {
+        height: 10%;
+        width: 100%;
+        .etapa {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+          div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            font-size: 30px;
+            color: #363d4d;
+            border-radius: 50%;
+            background-color: #ffe2fe;
+            margin-top: 8px;
+          }
+          span {
+            margin-left: 25px;
+            margin-top: 12px;
+            font-size: 30px;
+            color: #363D4D;
+          }
+        }
+      }
+      .bodyPayment{
+        width: 100%;
+        height: 55%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .footerPayment{
+        width: 100%;
+        height: 35%;
+      }
+    }
+  }
+}
