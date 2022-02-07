@@ -7,4 +7,12 @@ declare namespace API {
         quantity: number;
         amount: number;
     }
+    
+    type UserItem ={
+        id: number;
+        name: string;
+        username: string;
+        email: string;
+        password: string;
+    }
 }

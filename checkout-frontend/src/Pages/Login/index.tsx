@@ -1,34 +1,50 @@
 import './styles.scss';
-import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import React, { FormEvent, useEffect, useState } from 'react';
+import logar from 'Services/Login';
 const Login = () => {
-    const [loading, setLoading] = useState(false);
+    const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
-
-    useEffect(() => {
-        if (!loading && localStorage.getItem("token") !== null) {
-            navigate("/home");
-        }
-    }, [loading, navigate]);
-    const login = () => {
-        setLoading(true);
-        setTimeout(() => {
-            localStorage.setItem("token", "token");
-            setLoading(false);
-        }, 2000);
+    
+    // useEffect(() => {
+    //     let token = localStorage.getItem("token");
+    //     console.log(token);
+    //     navigate("/home");
+    // }, [navigate]);
+    const  login = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log(await logar(name,password))
     };
+
     return (
         <>
             <div className='fundo'>
                 <div className='campos col-5'>
-                    <label>Usuário</label>
-                    <input />
-                    <label>Senha</label>
-                    <input type="password" />
-                    <div className="enter">
-                        {loading && <div className="loader"></div>}
-                        <button onClick={login}>Entrar</button>
-                    </div>
+                    <form onSubmit={login}>
+                        <div>
+                            <input
+                                name='user'
+                                id='user'
+                                type='text'
+                                placeholder='Usuario'
+                                required
+                                value={name}
+                                onChange={(e)=>setName(e.target.value)}
+                            />
+
+                            <input
+                                name='password'
+                                id='password'
+                                type='password'
+                                placeholder='Senha'
+                                required
+                                value={password}
+                                onChange={(e)=>setPassword(e.target.value)}
+                            />
+                            <button type='submit'>Entrar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </>
