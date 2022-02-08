@@ -19,8 +19,7 @@ public class LoginController {
     @PostMapping("/login")
     public ResponseEntity<Session> logar(@RequestBody Login login) throws Exception{
         Session sessao = loginService.login(login);
-        
-        
         return ResponseEntity.ok().body(sessao);
     }
+    
 }

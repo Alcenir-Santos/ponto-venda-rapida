@@ -7,10 +7,8 @@ import LogoSefaz from 'components/HeaderPage/LogoSefaz';
 import Help from 'components/Help';
 import Image from 'components/Image';
 import { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import './styles.css';
 import ModalFinalizarVenda from 'components/Modals/ModalFinalizarVenda';
-import FormaPagamento from 'Pages/FormaPagamento';
 import Input from 'components/inputs/Input';
 interface ProdutosItem {
     id: number;
@@ -43,7 +41,6 @@ const Home = () => {
             })
             );
         }
-
     }, [produto]);
 
     produtos.map((item) => {

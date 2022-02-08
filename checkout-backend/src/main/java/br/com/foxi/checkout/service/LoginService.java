@@ -1,7 +1,10 @@
 package br.com.foxi.checkout.service;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Optional;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -28,19 +31,25 @@ public class LoginService {
 	public Session login(Login login) throws Exception {
 		Session s = new Session();
 		Optional<Session> sessao = Optional.empty();
+		
 		User user = userRepository.findByUsername(login.getUsername());
 		boolean passwordOk = encoder.matches(login.getPassword(), user.getPassword());
 		if (!passwordOk) {
 			return sessao.orElseThrow(() -> new AuthorizationException("usuario ou senha invalido"));
 		}else {
+			Calendar c = Calendar.getInstance();
+			c.setTimeZone(TimeZone.getTimeZone("GMT" + -3));
+			Date data = c.getTime();
 			s.setLogin(user.getUsername());
 			sessao = Optional.of(s);
 			JWTObject jwtObject = new JWTObject();
-			jwtObject.setIssuedAt(new Date(System.currentTimeMillis()));
-			jwtObject.setExpiration((new Date(System.currentTimeMillis() + SecurityConfig.EXPIRATION)));
+			jwtObject.setIssuedAt(data);
+			c.add(Calendar.MILLISECOND, SecurityConfig.EXPIRATION);
+			data = c.getTime();
+			jwtObject.setExpiration(data);
 			jwtObject.setRoles(user.getRoles());
 			s.setToken(JWTCreator.create(SecurityConfig.KEY, jwtObject));
-
+			System.out.println(data);
 			return sessao.orElseThrow(() -> new AuthorizationException("usuario ou senha invalido"));
 		}
 	}
