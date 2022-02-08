@@ -18,11 +18,12 @@ const Login = () => {
         }).then((response) => {
             let data = response.data
             localStorage.setItem('token', data.token);
-            //navigate('/home');
+            navigate('/');
             console.log(data)
         }).catch((error)=>{
             alert(error)
         })
+        
     }
 
     return (
